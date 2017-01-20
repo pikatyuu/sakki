@@ -11,12 +11,7 @@ class App < Sinatra::Base
     set :views, settings.root + "/views"
   end
 
-  get "/" do
-    slim :index
-  end
-
-  get "/:name" do
-    @name = params[:name]
+  get "/contribute" do
     slim :index
   end
 end
