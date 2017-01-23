@@ -5,8 +5,8 @@ class EntryRepository
   end
 
   def save(entry)
-    columns = Entry::COLUMNS.reject {|key| key == :id}
-    values = columns.map {|key| entry.instance_variable_get("@#{key}")}
+    columns = Entry::COLUMNS.reject { |key| key == :id }
+    values = columns.map { |key| entry.instance_variable_get("@#{key}") }
     query = "INSERT INTO `entries` (#{columns.join(", ")}) VALUES (#{columns.map {'?'}.join(', ')})"
     stmt = @db.prepare(query)
     stmt.execute(*values)
