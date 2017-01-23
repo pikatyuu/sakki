@@ -1,6 +1,4 @@
-doctype html
-html
-  head
-    title sakki
-  body
-    h1 Hello, I am #{@name || "sakki"}
+ul
+  - entry_repository.each_with_index do |entry, id|
+    li
+      a(href="/entries/#{id + 1}")= entry.title
