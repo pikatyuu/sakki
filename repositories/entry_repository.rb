@@ -9,6 +9,6 @@ class EntryRepository
   end
 
   def fetch(id)
-    return @entries[id]
+    return @entries[:id]
   end
 end
