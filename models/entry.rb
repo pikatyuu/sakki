@@ -1,7 +1,9 @@
 class Entry
-  attr_accessor :title
-  attr_accessor :body
-  attr_accessor :created_
-  attr_accessor :posted_at
-  attr_accessor :published
+  attr_accessor :title, :body, :posted_at, :published
+  def initialize(title, body, posted_at, published)
+    @title = title
+    @body = body
+    @posted_at = posted_at
+    @published = published
+  end
 end
