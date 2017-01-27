@@ -7,6 +7,7 @@ end
 Dir["repositories/*.rb"].each do |model|
   require_relative model
 end
+require "slim/include"
 
 class App < Sinatra::Base
   configure do
@@ -26,6 +27,10 @@ class App < Sinatra::Base
   end
 
   helpers do
+    def include_slim(name, options = {}, &block)
+      Slim::Template.new("/views/#{name}.slim", options).render(self, &block)
+    end
+
     def protected!
       unless authorize?
         response["WWW-Authenticate"] = %(Basic realm="Restricted Area")
@@ -36,7 +41,7 @@ class App < Sinatra::Base
     def authorize?
       @auth ||= Rack::Auth::Basic::Request.new(request.env)
       @auth.provided? && @auth.basic? && @auth.credentials &&
-      @auth.credentials == [ENV["USERNAME"], ENV["PASSWARD"]]
+      @auth.credentials == ["asdf", "asdfasdf"]
     end
 
     def entry_repository

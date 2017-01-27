@@ -1,5 +1,23 @@
-html{
-  body{
-    background-color: red
-  }
+body{
+  margin: 0;
+  padding: 0;
+  background-color: rgb(181, 129, 98);
+}
+
+header{
+  margin: 50px;
+  text-align: center;
+  font-size: 40px;
+  color: rgb(209, 237, 244);
+}
+
+.content{
+  margin: 20px;
+}
+
+footer{
+  border-top: 10px solid rgb(120, 120, 120);
+  padding: 0px 100px 0px 100px;
+  background-color: rgb(219, 219, 219);
+  height: 18em;
 }

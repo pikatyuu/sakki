@@ -1,0 +1,87 @@
+.entry{
+  margin: 30px 100px 0px 100px;
+  .entry-title{
+    font-size: 4em;
+    text-align: center;
+    font-family: "Klee","クレー";
+    color: rgb(240, 239, 239);
+    border-bottom: 1px solid rgb(255, 227, 204);
+  }
+  .entry-body{
+    padding: 0px 40px 0px 40px;
+    font-size: 25px;
+    font-family: "Tsukushi B Round Gothic","筑紫B丸ゴシック";
+    color: rgb(255, 238, 201);
+  }
+}
+
+.page-header{
+
+}
+
+.label{
+  color: rgb(41, 36, 133);
+  font-size: 20px;
+}
+
+.form-new{
+  margin: 0px 50px 0px 50px;
+  .form-group{
+    margin: 0px 20px 0px 20px;
+    .form-title{
+      padding: 10px;
+      margin: 5px;
+      border: 3px solid rgb(236, 236, 236);
+      border-radius: 3px;
+      width: 100%;
+      font-size: 20px;
+      font-family: "Klee","クレー";
+    }
+    .form-body{
+      padding: 10px;
+      margin: 5px;
+      border: 3px solid rgb(236, 236, 236);
+      border-radius: 3px;
+      width: 100%;
+      font-size: 20px;
+      font-family: "Tsukushi B Round Gothic","筑紫B丸ゴシック";
+    }
+  }
+  .form-submit{
+    float: right;
+    width: 100px;
+    height: 50px;
+    border: 2px solid rgb(177, 174, 174);
+    border-radius: 3px;
+    background-color: rgb(150, 201, 62);
+  }
+  .form-submit:hover{
+    background-color: rgb(216, 237, 181);
+  }
+}
+
+.latests{
+  font-family: fantasy;
+}
+
+ul.latest-entries{
+  list-style: none;
+  li{
+    button{
+      width: 100%;
+      padding: 4px;
+      font-size: 16px;
+      background-color: rgb(219, 219, 219);
+      border: 0;
+      text-align: left;
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      text-decoration: none;
+    }
+    button:hover{
+      background-color: rgb(255, 242, 217);
+    }
+    button:focus {
+      outline: none;
+    }
+  }
+}

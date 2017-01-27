@@ -1,0 +1,5 @@
+footer
+  h2.latests Latest Entries
+  ul.latest-entries
+    - entry_repository.resent(6).each do |entry|
+      li: button(href="#{entry.id}")#{entry.title}

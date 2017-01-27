@@ -1,9 +1,6 @@
-h1= @entry.title
+.entry
+  h1.entry-title= @entry.title
 
-== @entry.body_html
+  .entry-body== @entry.body_html
 
-footer
-  h2 最新記事
-  ul
-    - entry_repository.resent(6).each do |entry|
-      li: a(href="#{entry.id}")#{entry.title}
+include footer

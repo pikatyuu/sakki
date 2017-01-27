@@ -1,4 +1,11 @@
-form(method="POST", action="/entries")
-  input(type="text", name="title")
-  textarea(name="body")
-  input(type="submit", value="作成")
+form.form-new(method="POST", action="/entries")
+  dl
+    .form-group
+      dt.label 見出し
+      dd
+        input.form-title(type="text", name="title")
+    .form-group
+      dt.label 本文
+      dd
+        textarea.form-body(name="body", rows="6")
+  button.form-submit(type="submit")作成
