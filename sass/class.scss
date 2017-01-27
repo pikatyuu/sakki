@@ -1,11 +1,18 @@
 .entry{
   margin: 30px 100px 0px 100px;
-  .entry-title{
+  h1.entry-title{
     font-size: 4em;
     text-align: center;
     font-family: "Klee","クレー";
     color: rgb(240, 239, 239);
     border-bottom: 1px solid rgb(255, 227, 204);
+    margin-bottom: 0;
+  }
+  .chains{
+    .chain{
+      display: inline-block;
+      padding: 0 10px 0 10px;
+    }
   }
   .entry-body{
     padding: 0px 40px 0px 40px;

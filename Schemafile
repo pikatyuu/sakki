@@ -4,3 +4,11 @@ create_table "entries", force: :cascade do |t|
   t.datetime "posted_at"
   t.boolean "published"
 end
+
+create_table "chains", force: :cascade do |t|
+  t.integer "entry_id"
+  t.integer "chained_id"
+  t.datetime "chained_at"
+end
+
+add_foreign_key "chains", "entries", name: "entry_chain"

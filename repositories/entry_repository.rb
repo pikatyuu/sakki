@@ -24,7 +24,7 @@ class EntryRepository
   end
 
   def resent(limit = 5)
-    query = "SELECT * FROM `entries` ORDER BY `id` DESC LIMIT ?"
+    query = "SELECT * FROM `entries` ORDER BY `entries`.`id` DESC LIMIT ?"
     stmt = @db.prepare(query)
     res = stmt.execute(limit)
 

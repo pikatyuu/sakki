@@ -1,13 +1,16 @@
 require "bundler/setup"
 Bundler.require(:default)
 require "sinatra/reloader"
+require "slim/include"
 Dir["models/*.rb"].each do |model|
   require_relative model
 end
 Dir["repositories/*.rb"].each do |model|
   require_relative model
 end
-require "slim/include"
+Dir["chains/*.rb"].each do |model|
+  require_relative model
+end
 
 class App < Sinatra::Base
   configure do
@@ -48,6 +51,10 @@ class App < Sinatra::Base
       @@entry_repository ||= EntryRepository.new(App.database)
     end
 
+    def entry_chain
+      @@entry_chain ||= EntryChain.new(App.database)
+    end
+
     def title
       str = ""
       if @entry
@@ -79,6 +86,13 @@ class App < Sinatra::Base
 
   get "/entries/:id" do
     @entry = entry_repository.fetch(params[:id].to_i)
+    @chains = entry_chain.fetch_chaining_entry(params[:id])
     slim :entry
+  end
+
+  post "/entries/:id/chain" do
+    entry_chain.chain(params[:id], params[:chain_id])
+
+    redirect to("/entries/#{id}")
   end
 end

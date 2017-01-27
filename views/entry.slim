@@ -1,6 +1,11 @@
 .entry
   h1.entry-title= @entry.title
+  ul.chains
+    - @chains.each do |entry|
+      li.chain= entry["title"]
+    button.chain Chain
 
   .entry-body== @entry.body_html
+  
 
 include footer
